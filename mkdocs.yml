@@ -1,0 +1,6 @@
+site_name: BDI Micro Credit Prompt Library
+
+theme:
+  name: material
+  features:
+    - content.code.copy
