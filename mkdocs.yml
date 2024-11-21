@@ -8,3 +8,7 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Exercise 3-1: prompt-engineering-exercise-01.md
