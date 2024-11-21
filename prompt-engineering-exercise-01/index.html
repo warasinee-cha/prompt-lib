@@ -1,0 +1,625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../exercise1/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
+    
+    
+      
+        <title>Prompt Engineering Fundamentals - BDI Micro Credit Prompt Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prompt-engineering-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BDI Micro Credit Prompt Library" class="md-header__button md-logo" aria-label="BDI Micro Credit Prompt Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BDI Micro Credit Prompt Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt Engineering Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BDI Micro Credit Prompt Library" class="md-nav__button md-logo" aria-label="BDI Micro Credit Prompt Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BDI Micro Credit Prompt Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercise1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Prompt Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Fundamentals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Fundamentals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-being-detailed-and-specific" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: Being Detailed and Specific
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 1: Being Detailed and Specific">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-vs-detailed-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic vs. Detailed Prompts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      แบบฝึกหัดที่ 1:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-2-guiding-the-models-thinking-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 2: Guiding the Model's Thinking Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 2: Guiding the Model's Thinking Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-step-by-step-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Step-by-Step Thinking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercise-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Exercise 2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-3-experimenting-and-iterating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 3: Experimenting and Iterating
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 3: Experimenting and Iterating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercise-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Exercise 3:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-being-detailed-and-specific" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: Being Detailed and Specific
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 1: Being Detailed and Specific">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-vs-detailed-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic vs. Detailed Prompts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      แบบฝึกหัดที่ 1:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-2-guiding-the-models-thinking-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 2: Guiding the Model's Thinking Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 2: Guiding the Model's Thinking Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-step-by-step-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Step-by-Step Thinking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercise-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Exercise 2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-3-experimenting-and-iterating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 3: Experimenting and Iterating
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 3: Experimenting and Iterating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practice-exercise-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Exercise 3:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="prompt-engineering-fundamentals">Prompt Engineering Fundamentals</h1>
+<p>In this exercise, you'll practice the three key techniques for effective prompt writing we covered in class. Each lesson includes examples and hands-on practice to help you master these skills. Remember to save your chat logs - you'll need them for the mini project!</p>
+<h2 id="lesson-1-being-detailed-and-specific">Lesson 1: Being Detailed and Specific</h2>
+<p>AI assistants work best when given clear, detailed instructions. Let's practice making our prompts more specific.</p>
+<h3 id="basic-vs-detailed-prompts">Basic vs. Detailed Prompts</h3>
+<p>Try these prompts and observe the difference in responses:</p>
+<pre><code class="language-prompt">Help me write a letter to my teacher.
+</code></pre>
+<pre><code class="language-prompt">Help me write a letter to my science teacher requesting an extension for my biology project. Details:
+- I'm in 10th grade
+- The project is about ecosystem conservation
+- I need 3 more days because I'm waiting for data from my field research
+- I have a good academic record and never asked for extensions before
+- Tone should be polite and professional
+</code></pre>
+<pre><code class="language-prompt">ช่วยเขียนอีเมลถึงครูหน่อย
+</code></pre>
+<pre><code class="language-prompt">ช่วยเขียนอีเมลถึงครูที่ปรึกษาชมรมคอมพิวเตอร์ โดยมีรายละเอียดดังนี้:
+- ผมเป็นนักเรียน ม.5 สนใจด้านการเขียนโปรแกรมและ AI มาก
+- เคยได้รางวัลชนะเลิศการแข่งขันเขียนโปรแกรมระดับเขต
+- เคยผ่านการอบรม Python จาก สสวท.
+- อยากสมัครเป็นประธานชมรมคอมพิวเตอร์ในปีการศึกษาหน้า
+- ต้องการนำเสนอโครงการพัฒนาเว็บไซต์โรงเรียนใหม่
+กรุณาเขียนให้สุภาพ เป็นทางการ และแสดงให้เห็นถึงวิสัยทัศน์ในการพัฒนาชมรม
+</code></pre>
+<h3 id="1">แบบฝึกหัดที่ 1:</h3>
+<p>เลือกทำ 1 ข้อจากตัวอย่างข้างบน หรือคิดหัวข้อใหม่ที่อยากฝึกเขียน prompt แบบละเอียดก็ได้ ลองเขียน prompt แบบง่ายก่อน แล้วปรับให้มีรายละเอียดมากขึ้น สังเกตว่าคำตอบของ AI เปลี่ยนไปอย่างไร:</p>
+<pre><code class="language-prompt">Help me prepare for my presentation about renewable energy.
+</code></pre>
+<pre><code class="language-prompt">ช่วยเตรียมบทพูดสำหรับการนำเสนอโครงงานวิทยาศาสตร์เรื่องพลังงานแสงอาทิตย์
+</code></pre>
+<pre><code class="language-prompt">Give me ideas for my creative writing assignment.
+</code></pre>
+<p>💡 <strong>Tip</strong>: Think about the 5W1H (Who, What, When, Where, Why, How) when adding details to your prompts.</p>
+<h2 id="lesson-2-guiding-the-models-thinking-process">Lesson 2: Guiding the Model's Thinking Process</h2>
+<p>Breaking down complex tasks into steps helps AI provide better responses. Let's practice creating structured prompts.</p>
+<h3 id="example-of-step-by-step-thinking">Example of Step-by-Step Thinking</h3>
+<pre><code class="language-prompt">ถ้าปล่อยวัตถุจากความสูง 20 เมตร จะใช้เวลาตกถึงพื้นกี่วินาที
+</code></pre>
+<pre><code class="language-prompt">ช่วยวิเคราะห์โจทย์ฟิสิกส์เรื่องการตกอย่างอิสระนี้:
+&quot;วัตถุถูกปล่อยจากตึกสูง 20 เมตร จงหา:
+1. เวลาที่วัตถุใช้ในการตกถึงพื้น
+2. ความเร็วของวัตถุขณะกระทบพื้น
+3. ความเร็วเฉลี่ยตลอดการเคลื่อนที่&quot;
+
+กรุณาแสดงวิธีทำตามขั้นตอนนี้:
+1. เขียนสมการการที่เกี่ยวข้องทั้งหมดพร้อมอธิบายความหมายของตัวแปร
+2. วิเคราะห์ว่าต้องใช้สมการไหนหาอะไรบ้าง จัดลำดับการแก้สมการ
+3. แสดงการแทนค่าและคำนวณทีละขั้น
+4. ยกตัวอย่างการประยุกต์ใช้ความรู้นี้ในชีวิตจริงหรือในงานวิศวกรรม
+
+แสดงหน่วยทุกขั้นตอน และอธิบายแนวคิดให้เข้าใจง่าย
+</code></pre>
+<h3 id="practice-exercise-2">Practice Exercise 2:</h3>
+<p>Create step-by-step prompts for these tasks:</p>
+<pre><code class="language-prompt">วางแผนการอ่านหนังสือสอบปลายภาค
+</code></pre>
+<pre><code class="language-prompt">Design a social media campaign for the school festival.
+</code></pre>
+<pre><code class="language-prompt">ช่วยวางแผนจัดกิจกรรมรณรงค์ลดขยะพลาสติกในโรงเรียน
+</code></pre>
+<h2 id="lesson-3-experimenting-and-iterating">Lesson 3: Experimenting and Iterating</h2>
+<p>Let's practice improving prompts through iteration. Here's an example series:</p>
+<pre><code class="language-prompt">How do I improve my English?
+</code></pre>
+<pre><code class="language-prompt">What are the best methods for a Thai high school student to improve English speaking and writing skills?
+</code></pre>
+<pre><code class="language-prompt">I'm a Thai high school student preparing for international university applications. Please suggest:
+- Daily English practice activities (30-60 mins per day)
+- Recommended apps and online resources
+- Speaking practice methods when I don't have foreign friends
+- Writing exercise ideas focused on academic English
+- Tips for expanding vocabulary through daily activities
+</code></pre>
+<h3 id="practice-exercise-3">Practice Exercise 3:</h3>
+<p>Improve these prompts through 3 iterations:</p>
+<pre><code class="language-prompt">ช่วยสอนวิธีพับกระดาษโอริกามิ
+</code></pre>
+<pre><code class="language-prompt">Help me create a study schedule.
+</code></pre>
+<pre><code class="language-prompt">แนะนำหนังสือที่น่าอ่าน
+</code></pre>
+<p>💡 <strong>Tip</strong>: After each response, ask yourself:
+- What's missing from the output?
+- What assumptions did the AI make?
+- What additional context would help?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
