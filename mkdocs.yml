@@ -12,3 +12,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Exercise 3-1: prompt-engineering-exercise-01.md
+
+extra_css:
+  - stylesheets/extra.css
