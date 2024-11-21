@@ -19,3 +19,6 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 ```yaml
 python3 hello.py
 ```
+
+??? note "Click to expand"
+    This is the hidden content that will be revealed when the user clicks on the note.
