@@ -1,0 +1,460 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
+    
+    
+      
+        <title>แบบฝึกหัด: เทคนิคการใช้ ChatGPT เพื่อค้นหาและสรุปข้อมูล - BDI Micro Credit Prompt Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chatgpt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BDI Micro Credit Prompt Library" class="md-header__button md-logo" aria-label="BDI Micro Credit Prompt Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BDI Micro Credit Prompt Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              แบบฝึกหัด: เทคนิคการใช้ ChatGPT เพื่อค้นหาและสรุปข้อมูล
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BDI Micro Credit Prompt Library" class="md-nav__button md-logo" aria-label="BDI Micro Credit Prompt Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BDI Micro Credit Prompt Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt-engineering-exercise-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercise 3-1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      วัตถุประสงค์
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. เทคนิคการค้นหาข้อมูลใน ChatGPT เวอร์ชันฟรี
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. เทคนิคการหาข้อมูลที่น่าเชื่อถือ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. เทคนิคการถามแบบเจาะลึก
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. เทคนิคการหาและใช้ข้อมูลภาษาอังกฤษ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      แบบฝึกหัดให้ทดลองทำ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      วิธีการส่งงาน
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chatgpt">แบบฝึกหัด: เทคนิคการใช้ ChatGPT เพื่อค้นหาและสรุปข้อมูล</h1>
+<p>ChatGPT สามารถเป็นผู้ช่วยที่ทรงพลังในการค้นคว้าข้อมูลสำหรับการเรียน การทำการบ้าน และการทำรายงาน แบบฝึกหัดนี้จะแนะนำเทคนิคต่างๆ ในการใช้ ChatGPT ค้นหาข้อมูล</p>
+<h2 id="_1">วัตถุประสงค์</h2>
+<ul>
+<li>เรียนรู้การใช้ ChatGPT ในการค้นหาข้อมูลจากอินเทอร์เน็ตอย่างมีประสิทธิภาพ</li>
+<li>เข้าใจวิธีการตรวจสอบความน่าเชื่อถือของข้อมูล</li>
+<li>ฝึกการใช้ ChatGPT ในการทำความเข้าใจเนื้อหาภาษาอังกฤษ</li>
+<li>พัฒนาทักษะการตั้งคำถามเพื่อได้ข้อมูลที่ตรงความต้องการ</li>
+</ul>
+<h2 id="1-chatgpt">1. เทคนิคการค้นหาข้อมูลใน ChatGPT เวอร์ชันฟรี</h2>
+<p>ต้องระบุให้ ChatGPT ทราบว่าต้องการข้อมูลจากอินเทอร์เน็ต:</p>
+<pre><code>ช่วยอธิบายหลักการทำโครงงานวิทยาศาสตร์ระดับมัธยมปลาย
+</code></pre>
+<pre><code>ช่วยอธิบายหลักการทำโครงงานวิทยาศาสตร์ระดับมัธยมปลาย เสิชอินเตอร์เน็ตมาตอบ
+</code></pre>
+<h2 id="2">2. เทคนิคการหาข้อมูลที่น่าเชื่อถือ</h2>
+<p>ขั้นตอนที่ 1: ถามหาแหล่งข้อมูลที่น่าเชื่อถือก่อน</p>
+<pre><code>ช่วยแนะนำแหล่งข้อมูลที่น่าเชื่อถือสำหรับการหาข้อมูลเกี่ยวกับการเปลี่ยนแปลงสภาพภูมิอากาศในประเทศไทย สำหรับทำรายงานวิชาวิทยาศาสตร์
+</code></pre>
+<p>ขั้นตอนที่ 2: ใช้แหล่งข้อมูลที่ได้มาในการค้นหา</p>
+<pre><code>ช่วยค้นหาข้อมูลเกี่ยวกับการเปลี่ยนแปลงสภาพภูมิอากาศในประเทศไทย จากเว็บไซต์กรมอุตุนิยมวิทยา สำนักงานนโยบายและแผนทรัพยากรธรรมชาติและสิ่งแวดล้อม และ IPCC โดยเน้นข้อมูลย้อนหลัง 5 ปี
+</code></pre>
+<h2 id="4">4. เทคนิคการถามแบบเจาะลึก</h2>
+<p>การใช้ ChatGPT อย่างมีประสิทธิภาพ คือการอ่านคำตอบแล้วคิดต่อ ถามต่อ เหมือนการสนทนากับครูหรืออาจารย์ ลองดูตัวอย่างการถามต่อยอดเรื่องการเปลี่ยนแปลงสภาพภูมิอากาศจากแชทนี้ได้:</p>
+<p><a href="https://chatgpt.com/share/6746a342-4234-8012-8106-03ffba985074">https://chatgpt.com/share/6746a342-4234-8012-8106-03ffba985074</a></p>
+<p><em>เคล็ดลับการถามต่อยอด:</em></p>
+<ul>
+<li>อ่านคำตอบให้เข้าใจก่อนถามคำถามต่อไป </li>
+<li>มุ่งความสนใจไปที่ประเด็นใหม่ที่เรายังไม่เคยรู้มาก่อน หรือประเด็นที่อาจจะเป็นประโยชน์ถ้าศึกษาเพิ่ม</li>
+<li>ถามทีละประเด็นโดยเฉพาะส่วนที่เราไม่เข้าใจ</li>
+<li>หลังจากได้ข้อมูลแล้ว เราขอไอเดียจาก AI เรื่องการเอาข้อมูลไปประยุกต์ใช้ในงานหรือชีวิตของเราได้</li>
+<li>เมื่อมีข้อมูลจำนวนมากจากการสนทนา เราขอให้ AI สรุปเป็นตาราง เอาไปใช้ต่อได้</li>
+</ul>
+<p><em>เราถาม AI ต่อยอดไปเพื่อ:</em></p>
+<ol>
+<li>เข้าใจเรื่องนั้นๆ อย่างลึกซึ้ง โดยสืบหาข้อมูลที่เกี่ยงเนื่องกัน เชื่อมโยงข้อมูลต่างๆเป็นเรื่องราวในสมองของเราเอง ทำให้จำความรู้ได้มากขึ้น</li>
+<li>สามารถนำความเข้าใจจากข้อมูล ไปประยุกต์ใช้ได้</li>
+<li>ฝึกทักษะการคิดวิเคราะห์ ในระหว่างที่อ่านข้อมูลจาก ChatGPT ว่าเราไม่เข้าใจตรงไหน คำตอบไหนไม่สมเหตุสมผล</li>
+<li>ฝึกทักษะการสรุปความและสังเคราะห์ข้อมูล เมื่อถามจนได้ความรู้เยอะแล้วก็สามารถสรุปเพื่อเอาไปอธิบายผู้อื่นได้</li>
+</ol>
+<h2 id="5">5. เทคนิคการหาและใช้ข้อมูลภาษาอังกฤษ</h2>
+<p>ChatGPT จะช่วยให้ทุกคนก้าวข้ามอุปสรรคทางภาษาได้ หากคิดว่าแหล่งข้อมูลภาษาอังกฤษน่าจะดีกว่าสำหรับการทำรายงาน เราก็สามารถสั่งให้ค้นหาเป็นภาษาอังกฤษได้เลย:</p>
+<pre><code>ช่วยค้นหาบทความภาษาอังกฤษเกี่ยวกับ vertical farming จากแหล่งข้อมูลที่น่าเชื่อถือ โดยเน้นข้อมูลเกี่ยวกับ ทำไม vertical farming จึงมีแนวโน้มเป็นที่นิยมในอนาคต ข้อดีข้อเสียเมื่อเทียบกับการเกษตรแบบดั้งเดิม ตัวอย่างความสำเร็จจากต่างประเทศ
+</code></pre>
+<pre><code>สำหรับบทความในลิงค์นี้
+
+ช่วยสรุปประเด็นสำคัญเป็นภาษาไทยที่เข้าใจง่าย อธิบายคำศัพท์เทคนิคที่สำคัญ ยกตัวอย่างที่เห็นภาพชัดเจน
+</code></pre>
+<p>สำหรับบทความบางเรื่องที่ยาวๆ การนำบทความไปให้ Claude ช่วยอธิบายมักจะได้ผลลัพธ์ที่ดีกว่า เราจะเรียนรู้เรื่องนี้ในแบบฝึกหัดถัดไป</p>
+<h2 id="_2">แบบฝึกหัดให้ทดลองทำ</h2>
+<p>ให้นักเรียนเลือกหัวข้อที่กำลังเรียนในวิชาใดก็ได้ แล้วฝึกถามต่อยอดกับ ChatGPT ตามขั้นตอนต่อไปนี้:</p>
+<ul>
+<li>เริ่มด้วยคำถามกว้างๆ เพื่อให้ได้ภาพรวมของหัวข้อ</li>
+<li>อ่านคำตอบแล้วเลือกประเด็นที่:<ul>
+<li>ยังไม่เข้าใจชัดเจน</li>
+<li>น่าสนใจและอยากรู้เพิ่มเติม</li>
+<li>เป็นความรู้ใหม่ที่ไม่เคยรู้มาก่อน</li>
+</ul>
+</li>
+<li>ถามต่อในประเด็นที่เลือก</li>
+<li>ทำซ้ำข้อ 2-3 อย่างน้อย 5 รอบ</li>
+<li>ขอให้ ChatGPT สรุปความรู้ทั้งหมดเป็นตาราง</li>
+</ul>
+<p><strong>ตัวอย่างหัวข้อที่แนะนำ:</strong></p>
+<ul>
+<li>พลังงานทดแทน</li>
+<li>เทคโนโลยี 5G</li>
+<li>การเปลี่ยนแปลงทางสังคมในยุคโซเชียลมีเดีย</li>
+<li>ทฤษฎีวิวัฒนาการ</li>
+</ul>
+<h2 id="_3">วิธีการส่งงาน</h2>
+<ol>
+<li>สร้างไฟล์ Word หรือ Google Doc</li>
+<li>ระบุหัวข้อที่เลือกและ prompt ที่เขียนขึ้น</li>
+<li>แสดงผลลัพธ์ที่ได้จาก ChatGPT</li>
+<li>เขียนสรุปสั้นๆ ว่าได้เรียนรู้อะไรจากการทำแบบฝึกหัดนี้</li>
+<li>ส่งไฟล์ผ่านระบบ LMS ตามกำหนดเวลา</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
