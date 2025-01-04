@@ -11,7 +11,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Exercise 3-1: prompt-engineering-exercise-01.md
+  - Exercise 3-1: prompt-engineering-01.md
+  - Exercise 4-1: search-techniques.md
+  - Exercise 4-2: fact-checking.md
+  - Exercise 5-1: claude-document-understanding.md
 
 extra_css:
   - stylesheets/extra.css
