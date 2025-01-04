@@ -15,6 +15,10 @@ nav:
   - Exercise 4-1: search-techniques.md
   - Exercise 4-2: fact-checking.md
   - Exercise 5-1: claude-document-understanding.md
+  - Exercise 6-1: data-analysis.md
+  - Exercise 6-2: coding.md
+  - Exercise 6-3: image-generation.md
+  - Exercise 6-4: presentation.md
 
 extra_css:
   - stylesheets/extra.css
