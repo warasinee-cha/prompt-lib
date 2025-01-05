@@ -11,7 +11,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Prompt Engineering: prompt-engineer-00.md
+  - Prompt Engineering: prompt-engineering-00.md
   - Exercise 3-1: prompt-engineering-01.md
   - Exercise 4-1: search-techniques.md
   - Exercise 4-2: fact-checking.md
