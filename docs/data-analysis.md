@@ -8,7 +8,7 @@
 
 แบบฝึกหัดต่อไปเราจะลองใช้ ChatGPT เพื่อทำความเข้าใจข้อมูลที่เราได้รับมา
 
-เราจะใช้ข้อมูล retail purchase จาก [Kaggle](https://www.kaggle.com/datasets/prasad22/retail-transactions-dataset)) ที่ถูกลดทอนให้สั้นเหลือ 250 แถวเพื่อการทดลอง สามารถดาวน์โหลดมาเล่นได้เลยค่ะ
+เราจะใช้ข้อมูล retail purchase จาก [Kaggle](https://www.kaggle.com/datasets/prasad22/retail-transactions-dataset) ที่ถูกลดทอนให้สั้นเหลือ 250 แถวเพื่อการทดลอง สามารถดาวน์โหลดมาเล่นได้เลยค่ะ
 
 ### 1. การสำรวจข้อมูลเบื้องต้น
 เขียน prompt เพื่อสำรวจและทำความเข้าใจโครงสร้างข้อมูล
